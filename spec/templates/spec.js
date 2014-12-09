@@ -3,7 +3,7 @@ describe ("<%= name %> Test", function(){
   var page = require('../pageObjects/builtWithAngular.js');
 
   beforeEach(function() {
-
+      isAngularSite(true);
 //    Example
 //    page.go("http://builtwith.angularjs.org/");
 

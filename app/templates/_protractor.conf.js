@@ -16,5 +16,16 @@ exports.config = {
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000
+  },
+  onPrepare: function(){
+      // If you need to interact with a non-Angular page, you may access the wrapped webdriver instance
+      // directly with browser.driver. This is a an alias.
+      global.dv = browser.driver;
+
+      global.isAngularSite = function(flag){
+          browser.ignoreSynchronization = !flag;
+      };
+
   }
+  
 };

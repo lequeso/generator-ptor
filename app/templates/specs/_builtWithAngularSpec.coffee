@@ -5,9 +5,9 @@ describe "Built With Angular", ->
   beforeEach ->
     page.go "http://builtwith.angularjs.org/"
 
-  it "should mention 95 sites were done with this fw", ->
+  it "should mention 207 sites were done with this fw", ->
     amount = page.getProjectsAmount()
-    expect(amount.getText()).toEqual "95"
+    expect(amount.getText()).toEqual "207"
 
   it "should be able to search projects", ->
     page.search "airline"
@@ -18,6 +18,5 @@ describe "Built With Angular", ->
     page.search "airline"
     project = page.getProjectsListByRow(0)
     expect(project.getText()).toMatch /WhichAirline/
-    page.driver().sleep 5000
     project.click()
 
